@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>List of Live Data</h1>
+<ul id="display-data">
+
+</ul>
+
+
+
+<script>
+    $(document).ready(function() {
+        SetInterval(function(){
+          $.ajax({
+            type:'GET',
+            url:"{% url 'get_question_answer' %}",
+            success:function(response){
+                 console.log(response);
+                 $('#display').empty();
+                for(var key in response. Questions){
+                var loop ,list ='<h2><li>' + response(Questions[key].name) + '</li></h2>'
+                $("#display").append(temp);
+            };
+            error:function$(response);{
+              
+              alert("An Error Occurred")
+            };
+        },
+    },1000);
+
+  });
+
+
+
+
+});
+
+</script>
+
+{% endblock %}

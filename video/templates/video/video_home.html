@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+       <link href="{% static 'homic/css/main.css' %}" rel="stylesheet" type="text/css">
+       <link href="{% static 'homic/dashboard.css' %}" rel="styslesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+
+    </head>
+    <body>
+         {% block content %}
+         <div class="video-fluid-reponsive">
+    <h1 class="mb-5">welcome To My video page</h1>
+        <form action="{% url 'video:video_home'%}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+            <button class="btn btn-success btn-lg ">upload</button>
+            <button class="btn btn-tomato btn-lg" >Delete</button>
+    </form>
+    <hr>
+
+        {% for x in all %}
+        <div class="video-box">
+        <h3 class="text-center mt-2 mb-2">{{x.title}}</h3>
+        <video class="embed-resposive embed-resposive 16by9" controls="controls">
+            
+            <source src="{{x.video.url}}" type="video/mp4"/>
+              
+                  
+              
+            
+        </video>
+
+        </div>
+        {% endfor %}
+        
+      </div>
+    
+    
+    {% endblock content %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+
+

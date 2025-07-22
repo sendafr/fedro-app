@@ -1,0 +1,57 @@
+{% extends  'base.html' %}
+
+{% load static %}
+s<style>
+   .body{
+   
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      border: none;
+      overflow: hidden;
+   }
+   .h1{
+      color: #4a90a2;
+      text-decoration: none;
+   }
+   .button{
+      background-color: #4a90a2;
+      color: #fff;
+      padding: 10px 20px;
+      border: navy;
+      border-radius: 5px;
+      cursor: pointer;
+   }
+   .button.hover{
+      background-color: #357ab8;
+      }
+   .form{
+      max-width: 400px;
+      margin: auto;
+      border: 2px solid;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+   }
+</style>
+
+{% block content %}
+<h2>Register Now !</h2>
+<div class="container">
+   <form  class="form-signup" enctype="multipart/form-data"  method="POST" style="border: solid 2px Violet; padding :5px;
+   width: 60%; background-color: MediumSeaGreen">
+
+   {% csrf_token%}
+
+   {{registerform.as_p}}
+    
+        {% if field.help_text %}
+           <small style="color: gray;">{{field.help_text}}</small>
+        {% endif %}   
+      </p>
+      
+      <button type="submit">Register</button>
+
+</form>
+{% endblock content %}

@@ -1,0 +1,9 @@
+
+SECRET_KEY = 'django-insecure-$omf5ya5_ep(w!d3jz35e*dp-ocaq@rw+96%vw-ov4r8fr5l@v'
+
+{
+	'NAME': 'koyebdb',
+	'USER': 'koyeb-adm',
+	'PASSWORD': 'npg_8TlUZtXCEeM6',
+	'HOST': 'ep-spring-dew-a2vkmihs.eu-central-1.pg.koyeb.app',
+}

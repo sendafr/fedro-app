@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}QuestionAnswerForm{% endblock title%}
+
+{% block content %}
+<div class= "content-align-centre"><h2>CreationForm</h2>
+<div class= "bl-p-f">
+<form   method="POST" id="creation-form"  enctype="multipart/form-data">
+  
+  {% csrf_token %}
+   {{form}}
+  <button type="submit">CreationForm</button> 
+  </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			  integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			  crossorigin="anonymous">
+  $(document).on('submit', '#creation-form', function(){
+       e.preventDefault();
+        $.ajax({
+          type:'POST',
+          url: "{% url 'personal:create_question_answer' %}",
+          data:{
+          title:$('#title').val(),
+          question:$('#question').val(),
+          answer:$('#answer').val(),
+          priority:$('#priority').val(),
+          csrfmiddlewaretoken:$('input[title=csrfmiddleware token]').val(),
+        },
+        success:function(data){
+           alert(data);
+        }
+      });
+  });
+  
+</script>
+  
+{% endblock content %}

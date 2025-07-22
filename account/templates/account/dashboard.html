@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="dash-container">
+    <div class="dash-nav"><h1> DashBoard-Navbar</h1>
+        <hr>
+    <a class="dash-nav-a1" href="{% url 'homic:home_view' %}"> home-page</a>
+      
+    <a class="dash-nav-a2" href="{% url 'account:logout' %}">Logout Here!</a>
+    
+    </div>
+
+    <div class=" dash-main" >
+        <div class="intro">
+      <h1><em>Introduction To Federalism</em></h1>
+        <hr>
+        <div class="intro-img">
+            <img src="{% static '/homic/images/graphicy.png' %}" alt="graphicy" width="100%"/>
+        </div> 
+
+      <p>federalism is the answer for African nations</p>
+      
+      </div>
+      
+      <div class="fed-ex"><h2>Examples Of Federal states</h2>
+        <hr>
+    </div>
+    <div class="fed-ben"><h2>Benefits Of a Federal system</h2>
+    <hr>
+    </div>
+
+
+
+</div>
+
+<div class="dash-footer">
+    <h2>@References</h2>
+</div>
+</div>
+{% endblock content %}

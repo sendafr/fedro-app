@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+  <div class="container-authenticate">
+    <div class="nav-auth">
+      <p>
+        <a class="must-auth-reg" href="{% url 'account:register' %}">Regester</a>
+        <a class="must-auth-log" href="{% url 'account:login' %}">Login</a>
+        </p>
+    </div>
+      <div class="authenticate">
+        <p class="m-auto">Must authenticate to view this page.</p>
+        <p class="m-auto">
+            <img src="{% static '/homic/images/erfan-mor.jpg.' %}" alt="erfan-mor"  width="1300px"max-height="400px" margin="20px"/>
+            
+
+      </div>
+  </div>
+
+{% endblock content %}

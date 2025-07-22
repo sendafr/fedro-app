@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <title> Federalism Website {% block title %}{% endblock %}</title>
+       <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+       <link href="{% static 'homic/css/main.css' %}" rel="stylesheet" type="text/css">
+       <link href="{% static 'homic/dashboard.css' %}" rel="styslesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <header>
+      <style>
+      .logo1{
+        border:solid blue 2px;
+        padding:10px;
+        width: 150px;
+        border-radius:50%;
+        margin-top:3px;
+        position: relative;
+        left:40%;
+        top:40px;
+        animation-duration:3s;
+        animation-name:spin;
+        animation-timing-function:ease-in-out;
+        animation-delay:1s;
+        animation-iteration-count:5;
+        animation-direction:normal;
+        animation-fill-mode:forwards;
+        animation-play-state:running;
+
+      }
+      .logo1:hover{
+        animation-play-state:paused;
+      }
+      @keyframes spin{
+        0%{
+
+        }
+        50%{
+          scale:3;
+          transform:rotate(0deg);
+          border-radius:0%;
+
+        
+        }
+        100%{
+          transform:rotate(360deg);
+          border-radius:50%;
+          scale:2;
+
+        }
+
+      }
+      </style>
+      <div  class="header" style="background-color: grey;">
+        <img src="{% static '/homic/images/logo1.png.png/' %}" alt="logo1" class="logo1" /> 
+        <h1><em>@Federalism.com!</em></h1>
+        <ul>
+          <a> <h1 class = "h1" style=" margin-left:20% ;margin-top:15px; padding-top: 2px; height:20%;"><em>I LoVe My ProJecT#?!</em></h1></a>
+            
+        </ul>
+      </div>
+    </header>
+     
+        <div class="container-fluid">
+            <div class="row justify-content-center" >
+              <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {% block content %}
+                
+                
+                {% endblock content %}
+              </main>
+            </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+                        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+                        crossorigin="anonymous">
+          </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+            
+            <script src="{% static 'homic/js/main.js' %}"></script>
+            
+        </body>
+          
+            <div class="footer" style="font:13px;  margin-left:450px;">
+              <footer  style="background-color:darkorchid;"></footer>
+              <p>This is the footer</p>
+              <p>@CoppyRight-Reserved</p>
+              </footer>
+          
+            </div>
+          
+        
+</html>      
+          
+   
+    
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+

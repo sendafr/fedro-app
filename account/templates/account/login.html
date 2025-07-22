@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="lo-form ct-md-5 mt-5" style="justify-content: center; "> 
+<h2>Login Here!</h2>
+
+<form class="form-login" enctype="multipart/form-data" autocomplete="off" method="POST" style="border: solid 2px Violet; padding:20px;
+ width: 30%; background-color: cadetblue;">
+    <div class=""></div>
+    {% csrf_token %}
+    {{loginform.as_p}}
+    <button type="submit" class="btn btn-StateBlue">Login</button>
+ 
+</form>
+</div>
+{% endblock content %}

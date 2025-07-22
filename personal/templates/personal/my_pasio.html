@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+<haed>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title><h1>giox home page    
+{% block title %}My Pasionate Page {% endblock title %}  </h1> </title>
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="">
+   <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+   <link href="{% static 'homic/css/main.css' %}" rel="stylesheet" type="text/css">
+   <link href="{% static 'homic/dashboard.css' %}" rel="styslesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <style>
+  
+ </style>
+</haed>
+<body>
+{% block content %}
+
+ <div class="mypasio-cont">
+
+    <div class="header-my-p">
+      <p>Transformations of Questions</p>
+    </div>
+  <div class="mypasionate-main">
+   
+   <div class="graphics-examples"><h1>Title Graphic Examples</h1><hr>
+    <img src="{% static '/homic/images/graphicy.png/' %}" alt="graphicy" width="100%">
+    <div class="graphic-img">
+    
+       <div class="img1">
+        <img src="{% static '/homic/images/part-ky.jpg.jpg/'%}" alt="part-ky" width="150px"height="250px">
+       </div>
+       <div class="img2">
+        <img src="{% static '/homic/images/crowi.jpg/' %}" alt="crowi" width="150px" height="250px">
+       </div>
+       <div class="img3">
+        <img src="{% static '/homic/images/rose.jpg/' %}" alt="rose" width="145px" height="250px" >
+       </div>
+       
+    </div>
+  
+  </div>
+   <div class="my_pasionate-nav">
+    <h1>This Is Pasio-Navbar</h1><hr>
+     <ul>
+       <a class="my_pasionate-nav-a1" href="{% url 'personal:create_question_answer' %}">CreationForm</a>
+       <br>
+       <a class="my_pasionate-nav-a2" href="{% url 'personal:get_question_answer' %}">GET-Me-QNA</a><br>
+       <a class="my_pasionate-nav-a3" href="{%  url 'personal:fedo' %}">Tempo Demo</a><br>  
+     </ul><hr>
+     <div class="nav-imo">
+     <div class="img4" >
+
+      <img src="{% static '/homic/images/road-to-federalism.jpg/' %}" alt="road-to-federalism"  width="200%" style="border: solid 5px brown;
+      border-radius: 10px;">
+       </div>
+       <div class="img5" >
+
+       <img src="{% static '/homic/images/cosmic.jpg/' %}" alt="cosmic" width="250px" height="220px" style="border: solid 5px blueviolet;
+       border-radius: 10px;">
+        <p> my slide</p>
+       </div>
+      </div>
+
+   </div>
+
+   <div class="in-qns">
+    <h1>question-List</h1><hr>
+     <ol>
+         {% for question in questions %}
+            {{question.title}}<br>
+
+            {{question.question}}<br>
+            {{question.answer}}<br>
+            {{question.priority}}<br><hr>
+          {% endfor %}  
+      </ol> 
+
+    </div>
+  </div>
+  <div class="mypasio-footer">
+    <p>I love federalism quiz questions, they are so educative and soul reviving 
+      especially for some tromatized by the brutarity , corruption of highest order,
+      neptimizm,arogance of political leader who only care for their families agnaist
+       their nations
+    </p>
+  </div>
+</div>
+
+{% endblock content %}
+</body>
+ <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+                    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+                    crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+     
+        <script src="" async defer></script>
+</html>
